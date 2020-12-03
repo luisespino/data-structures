@@ -1,4 +1,4 @@
-# edd
-Estructuras de Datos
+# Data Structures
 
-Ejemplos de programación orientada a objetos en C++ y Java, con diagramas de clases
+Examples of Python, C++ and Java.
+
