@@ -22,7 +22,7 @@ class BSTree:
             tmp.right=self._add(value, tmp.right)
         else:
             tmp.left=self._add(value, tmp.left)
-        return tmp;
+        return tmp
 
     #traversals
 
