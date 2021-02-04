@@ -1,4 +1,4 @@
 # Data Structures
 
-Examples of Python, C++ and Java.
+Examples of Python, Go, C++ and Java.
 
