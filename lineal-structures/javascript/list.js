@@ -28,6 +28,7 @@ class Lista{
 }
 
 var lista = new Lista()
+lista.agregar(20)
 lista.agregar(10)
 lista.agregar(15)
 lista.agregar(5)
