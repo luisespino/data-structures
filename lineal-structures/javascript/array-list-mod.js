@@ -30,7 +30,7 @@ class Lista{
 var a = []
 
 for (var i = 0; i < 5; i++) {
-a[i] = new Lista()
+  a[i] = new Lista()
 }
 
 a[1%5].agregar(1)
@@ -40,6 +40,6 @@ a[8%5].agregar(8)
 a[14%5].agregar(14)
 
 for (var i = 0; i < 5; i++) {
-document.getElementById("log").innerHTML+="<br>"+i+" -> "  
-a[i].mostrar()
+  document.getElementById("log").innerHTML+="<br>"+i+" -> "  
+  a[i].mostrar()
 }
