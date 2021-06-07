@@ -25,6 +25,11 @@ class Lista{
       temp = temp.siguiente
     }
     document.getElementById("log").innerHTML+="]"
-  }
-  
+  } 
 }
+
+let lista = new Lista()
+lista.agregar(10)
+lista.agregar(15)
+lista.agregar(5)
+lista.mostrar()
