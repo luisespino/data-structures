@@ -18,7 +18,7 @@ class Lista{
   
   mostrar() {
     var temp = this.cabeza
-    document.getElementById("log").innerHTML+="<br>[ "    
+    document.getElementById("log").innerHTML+="[ "    
     while(temp) {
       document.getElementById("log").innerHTML+=temp.valor+" ";
       temp = temp.siguiente
