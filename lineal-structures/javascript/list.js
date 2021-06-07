@@ -11,13 +11,13 @@ class Lista{
   }
   
   agregar(valor) {
-    let temp = new Nodo(valor)
+    var temp = new Nodo(valor)
     temp.siguiente = this.cabeza
     this.cabeza = temp
   }
   
   mostrar() {
-    let temp = this.head
+    var temp = this.cabeza
     document.getElementById("log").innerHTML+="<br>[ "
     while(temp) {
       document.getElementById("log").innerHTML+=temp.valor;
@@ -28,7 +28,7 @@ class Lista{
   } 
 }
 
-let lista = new Lista()
+var lista = new Lista()
 lista.agregar(10)
 lista.agregar(15)
 lista.agregar(5)
