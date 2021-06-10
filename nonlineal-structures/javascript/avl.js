@@ -17,43 +17,30 @@ class AVL {
 	}
 
 	add(value) {
-        if (this.root != null) this._add(value, this.root)
-        else this.root = new Node(value)
+		this.root = this._add(value, this.root)
     }
 
     _add(value, tmp) {
-		if (tmp == null) {
-			tmp = new Node(value)
-			alert(tmp.value)
-		} 
+		if (tmp == null) return new Node(value)
 		else if (value < tmp.value) {
-			this._add(value,tmp.left)
-			/*
+			tmp.left = this._add(value, tmp.right)
 			if ((this.height(tmp.left)-this.height(tmp.right))==2) {
 				if (value < tmp.left.value) tmp = this.srl(tmp)
 				else tmp = this.drl(tmp)
-			} 
-			*/
+			}
 		} else if (value > tmp.value) {
-			alert('mayor')
-			this._add(value,tmp.right)
-			alert(tmp.right)
-			/*
+			tmp.right = this._add(value, tmp.right)
 			if ((this.height(tmp.right)-this.height(tmp.left))==2) {
-				if (value < tmp.right.value) tmp = this.srr(tmp)
+				if (value > tmp.right.value) tmp = this.srr(tmp)
 				else tmp = this.drr(tmp)
 			} 
-			*/
 		}
-
 		
-		var d, i, m		
 		var r = this.height(tmp.right)
-		var l = this.height(tmp.left)
-		
-		m = this.max(d, i)
+		var l = this.height(tmp.left)		
+		var m = this.max(r, l)
 		tmp.height = m + 1
-		
+		return tmp		
     }
 
 	height(tmp) {
