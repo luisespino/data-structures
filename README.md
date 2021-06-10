@@ -9,3 +9,5 @@ Javascript examples:
 [Array List Mod](https://luisespino.github.io/data-structures/lineal-structures/javascript/array-list-mod.html)
 
 [BST Tree](https://luisespino.github.io/data-structures/nonlineal-structures/javascript/bst.html)
+
+[AVL Tree](https://luisespino.github.io/data-structures/nonlineal-structures/javascript/avl.html)
