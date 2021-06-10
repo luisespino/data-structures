@@ -110,8 +110,20 @@ class AVL {
 
     dotgen(tmp) {
         if (tmp != null) {
+
             if (tmp.left != null) this.dot += tmp.value+'--'+tmp.left.value+';'
             if (tmp.right != null) this.dot += tmp.value+'--'+tmp.right.value+';'
+
+			
+			/*
+			if (tmp.left == null)
+				this.dot += tmp.value+'-- '+tmp.right.value+';'
+			if (tmp.right != null && tmp.left !=null) 
+				this.dot += tmp.value+'-- {'+tmp.left.value+' '+temp.right.value+'};'
+			
+			else if (tmp.right == null)
+				this.dot += tmp.value+'-- {'+tmp.left.value+' null};'
+				*/
             this.dotgen(tmp.left)
             this.dotgen(tmp.right)
         }
@@ -122,14 +134,11 @@ function avl() {
     var avl = new AVL()
     avl.add(5)
     avl.add(10)	
-	/*
-
     avl.add(20)
     avl.add(25)
     avl.add(30)
     avl.add(35)
     avl.add(40)
-	*/
     document.getElementById("log").innerHTML+='Preorder:  '
     avl.preorder(avl.root)
     document.getElementById("log").innerHTML+='<br>Inorder:   '
