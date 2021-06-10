@@ -85,4 +85,3 @@ function avl() {
     avl.dot += '}'
     return avl.dot
 }
-
