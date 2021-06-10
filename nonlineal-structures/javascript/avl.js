@@ -75,14 +75,14 @@ function avl() {
     avl.add(35)
     avl.add(40)
     document.getElementById("log").innerHTML+='Preorder:  '
-    bst.preorder(bst.root)
+    avl.preorder(avl.root)
     document.getElementById("log").innerHTML+='<br>Inorder:   '
-    bst.inorder(bst.root)
+    avl.inorder(avl.root)
     document.getElementById("log").innerHTML+='<br>Postorder: '
-    bst.postorder(bst.root)
-    bst.dot = '{'
-    bst.dotgen(bst.root)
-    bst.dot += '}'
-    return bst.dot
+    avl.postorder(avl.root)
+    avl.dot = '{'
+    avl.dotgen(avl.root)
+    avl.dot += '}'
+    return avl.dot
 }
 
