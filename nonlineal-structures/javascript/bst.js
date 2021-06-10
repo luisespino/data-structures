@@ -1,3 +1,6 @@
+// MIT License
+// Copyright (c) 2021 Luis Espino
+
 class Node {
 	constructor(value) {
 		this.value 	= value

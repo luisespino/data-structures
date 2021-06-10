@@ -1,42 +1,88 @@
 // MIT License
 // Copyright (c) 2021 Luis Espino
 
-function sucesores(n){
-    if (n[0]=='A')
-        return [['B', n[1]+5,inc()], ['C', n[1]+6,inc()]]
-    if (n[0]=='B')
-        return [['A', n[1]+5,inc()], ['C', n[1]+6,inc()], ['D', n[1]+3,inc()], ['E', n[1]+5,inc()]]
-    if (n[0]=='C')
-        return [['A', n[1]+6,inc()], ['B', n[1]+6,inc()], ['E', n[1]+2,inc()]]
-    if (n[0]=='D')
-        return [['B', n[1]+3,inc()], ['E', n[1]+3,inc()], ['F', n[1]+4,inc()]]
-    if (n[0]=='E')
-        return [['B', n[1]+5,inc()], ['C', n[1]+2,inc()], ['D', n[1]+3,inc()], ['F', n[1]+1,inc()]]
-    if (n[0]=='F')
-        return [['D', n[1]+4,inc()], ['E', n[1]+1,inc()]]
-}
-
-function costo(start, end){
-	var dot = '{'
-	var list = [[start,0,inc()]];
-	dot+=list[0][2]+' [label="'+list[0][0]+'"];'
-	while (list.length > 0){
-		var current = list.shift();
-		if (current[0] == end) {			
-			dot += '}'
-			return dot
-		}
-		var temp = sucesores(current);
-		//temp.reverse();
-		temp.forEach(val => dot+=val[2]+' [label="'+val[0]+'"];'+current[2]+'--'+val[2]+' [label="'+val[1]+'"] ;')
-		list = temp.concat(list);
-		list = list.sort( function(a,b) { return a[1] - b[1] });
+class Node {
+	constructor(value) {
+		this.value 	= value
+		this.left 	= null
+		this.right 	= null
 	}
-	dot += '}'
-	return dot
 }
 
-var id = 1
-function inc() {
-	return id++
+class AVL {
+	constructor() {
+		this.root = null
+        this.dot = ''
+	}
+
+	add(value) {
+        if (this.root != null) this._add(value, this.root)
+        else this.root = new Node(value)
+    }
+
+    _add(value, tmp) {
+        if (value < tmp.value) {
+            if (tmp.left != null) this._add(value,tmp.left)
+            else tmp.left = new Node(value)
+        } else {
+            if (tmp.right != null) this._add(value,tmp.right)
+            else tmp.right = new Node(value)
+        }
+    }
+
+    preorder(tmp) {
+        if (tmp != null) {
+            document.getElementById("log").innerHTML+=tmp.value+' '
+            this.preorder(tmp.left)
+            this.preorder(tmp.right)
+        }
+    }
+
+    inorder(tmp) {
+        if (tmp != null) {
+            this.inorder(tmp.left)
+            document.getElementById("log").innerHTML+=tmp.value+' '
+            this.inorder(tmp.right)
+        }
+
+    }
+
+    postorder(tmp) {
+        if (tmp != null) {
+            this.postorder(tmp.left)
+            this.postorder(tmp.right)
+            document.getElementById("log").innerHTML+=tmp.value+' '
+        }
+    }
+
+    dotgen(tmp) {
+        if (tmp != null) {
+            if (tmp.left != null) this.dot += tmp.value+'--'+tmp.left.value+';'
+            if (tmp.right != null) this.dot += tmp.value+'--'+tmp.right.value+';'
+            this.dotgen(tmp.left)
+            this.dotgen(tmp.right)
+        }
+    }
 }
+
+function bst() {
+    var avl = new BST()
+    avl.add(5)
+    avl.add(10)
+    avl.add(20)
+    avl.add(25)
+    avl.add(30)
+    avl.add(35)
+    avl.add(40)
+    document.getElementById("log").innerHTML+='Preorder:  '
+    bst.preorder(bst.root)
+    document.getElementById("log").innerHTML+='<br>Inorder:   '
+    bst.inorder(bst.root)
+    document.getElementById("log").innerHTML+='<br>Postorder: '
+    bst.postorder(bst.root)
+    bst.dot = '{'
+    bst.dotgen(bst.root)
+    bst.dot += '}'
+    return bst.dot
+}
+
