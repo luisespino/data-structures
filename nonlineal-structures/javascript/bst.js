@@ -71,15 +71,15 @@ function bst() {
     bst.add(35)
     bst.add(30)
     bst.add(40)
+    document.getElementById("log").innerHTML+='Preorder:  '
     bst.preorder(bst.root)
-    document.getElementById("log").innerHTML+='<br>'
+    document.getElementById("log").innerHTML+='<br>Inorder:   '
     bst.inorder(bst.root)
-    document.getElementById("log").innerHTML+='<br>'
+    document.getElementById("log").innerHTML+='<br>Postorder: '
     bst.postorder(bst.root)
     bst.dot = '{'
     bst.dotgen(bst.root)
     bst.dot += '}'
     return bst.dot
-
 }
 
