@@ -47,11 +47,9 @@ class AVL {
 		}
 
 		
-		var d, i, m		
 		var r = this.height(tmp.right)
-		var l = this.height(tmp.left)
-		
-		m = this.max(d, i)
+		var l = this.height(tmp.left)		
+		var m = this.max(r, l)
 		tmp.height = m + 1
 		
     }
