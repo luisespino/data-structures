@@ -65,7 +65,7 @@ class AVL {
     }
 }
 
-function bst() {
+function avl() {
     var avl = new AVL()
     avl.add(5)
     avl.add(10)
