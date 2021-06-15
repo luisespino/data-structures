@@ -50,8 +50,7 @@ class Merkle {
         tmp.hash = (tmp.left.value*1000).toString(16)
       } else {
         tmp.hash = (parseInt(tmp.left.hash, 16)+parseInt(tmp.right.hash, 16)).toString(16)
-      }
-      
+      }      
     }
   }
 
@@ -89,7 +88,7 @@ class Merkle {
     if (tmp != null) {
       if (tmp.left != null){
         if (tmp.left instanceof DataNode) {
-          this.dot += '"'+tmp.left.value+'" -> "0x'+tmp.hash+'";'
+          this.dot += '"'+tmp.left.value+'" [color=gray] -> "0x'+tmp.hash+'";'
         }
       }
       if (tmp.left instanceof HashNode) {
