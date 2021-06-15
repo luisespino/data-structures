@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+<title>Merkle Tree</title>
+<script type="text/javascript" src="vis-network.min.js"></script>
+<script type="text/javascript" src="merkle.js"></script>
+
+</head>
+<body>
+<p id="log"></p>
+<div id="mynetwork"></div>
+<script type="text/javascript">
+    // create a network
+    var container = document.getElementById("mynetwork");
+	var DOTstring = merkle()
+	var parsedData = vis.parseDOTNetwork(DOTstring);
+	var data = {
+	    nodes: parsedData.nodes,
+	    edges: parsedData.edges
+	}
+    var options = {
+        nodes: {
+            widthConstraint: 80,
+        },        
+        layout: {
+            hierarchical: {
+                parentCentralization: true,
+                direction: 'DU',        // UD, DU, LR, RL
+                sortMethod: 'directed',  // hubsize, directed
+                shakeTowards: 'roots'  // roots, leaves                    
+		    },
+        },                        
+    };
+    var network = new vis.Network(container, data, options);
+    </script>  
+</body>
+</html>
