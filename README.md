@@ -11,3 +11,5 @@ Javascript examples:
 [BST Tree](https://luisespino.github.io/data-structures/nonlineal-structures/javascript/bst.html)
 
 [AVL Tree](https://luisespino.github.io/data-structures/nonlineal-structures/javascript/avl.html)
+
+[Merkle Tree](https://luisespino.github.io/data-structures/nonlineal-structures/javascript/merkle.html)
