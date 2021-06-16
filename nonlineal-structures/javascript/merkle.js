@@ -72,7 +72,7 @@ class Merkle {
       exp += 1
     }
     for (var i = this.datablock.length; i < Math.pow(2, exp); i++) {
-      this.datablock.push(new DataNode(i*10))
+      this.datablock.push(new DataNode(i*100))
     }
     index = Math.pow(2, exp)
     this.createTree(exp)
@@ -108,6 +108,8 @@ function merkle() {
     m.add(4)
     m.add(5)
     m.add(6)
+    m.add(7)
+    m.add(8)
     m.auth()
     m.dot = '{node [shape=box];'
     m.dotgen(m.tophash)
