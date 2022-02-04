@@ -1,7 +1,7 @@
 class ListNode {
-    int data;
+    Object data;
     ListNode next;
-    public ListNode(int data) {
+    public ListNode(Object data) {
         this.data = data;
         this.next = null;
     }
@@ -10,7 +10,7 @@ class ListNode {
 public class List {
     ListNode head;
 
-    void add(int val) {
+    void add(Object val) {
         ListNode tmp =  new ListNode(val);
         tmp.next = head;
         head = tmp;
@@ -22,6 +22,7 @@ public class List {
             System.out.print(tmp.data+" ");
             tmp = tmp.next;
         }
+        System.out.println();
     }
     
     public static void main(String [] args){
