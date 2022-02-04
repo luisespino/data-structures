@@ -24,7 +24,7 @@ func (l *List) show() {
 	}
 }
 
-func main() {
+func main2() { //Go does not allow multiple main
 	l := List{}
 	l.add(3)
 	l.add(9)
