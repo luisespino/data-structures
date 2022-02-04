@@ -3,7 +3,7 @@ public class ArrayListMod {
 
     public static void main (String [] args) {
         List [] a = new List[5];
-        for (int i=0; i<5; i++) 
+        for (int i=0; i<5; i++) // O(n) unnecessary for the instantiation
             a[i] = new List();
         a[1%5].add(1);
         a[3%5].add(3);
