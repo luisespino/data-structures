@@ -9,7 +9,6 @@ public class majororder2d {
             for (int j = 0; j < 4; j++){
                 rowmajor[i*4+j] = m[i][j];
                 colmajor[i+4*j] = m[i][j];
-    
             }
     
         for (int i = 0; i < 16; i++)
@@ -17,7 +16,5 @@ public class majororder2d {
         System.out.println();
         for (int i = 0; i < 16; i++)
             System.out.print (colmajor[i]+" ");
-
     }
-
 }
