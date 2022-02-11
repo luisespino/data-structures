@@ -48,12 +48,12 @@ public class Recursion {
     
     public static void main(String [] args) {
         Recursion r = new Recursion();
-        System.out.println("3*2     :"+r.multi(3, 2));
-        System.out.println("6/3     :"+r.divi(6, 3));
-        System.out.println("fact(5) :"+r.factorial(5));
-        System.out.println("fibo(5) :"+r.fibonacci(5));
-        System.out.println("ack(2,2):"+r.ackermann(2,2));
-        System.out.println("impar(3):"+r.impar(3));
-        System.out.println("par(3)  :"+r.par(3));
+        System.out.println("3*2     : "+r.multi(3, 2));
+        System.out.println("6/3     : "+r.divi(6, 3));
+        System.out.println("fact(5) : "+r.factorial(5));
+        System.out.println("fibo(5) : "+r.fibonacci(5));
+        System.out.println("ack(2,2): "+r.ackermann(2,2));
+        System.out.println("impar(3): "+r.impar(3));
+        System.out.println("par(3)  : "+r.par(3));
     }
 }
