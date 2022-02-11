@@ -7,7 +7,7 @@ public class majororder2d {
     
         for (int i = 0; i < 4; i++)
             for (int j = 0; j < 4; j++){
-                rowmajor[i*4+j] = m[i][j];
+                rowmajor[j+4*i] = m[i][j];
                 colmajor[i+4*j] = m[i][j];
             }
     
