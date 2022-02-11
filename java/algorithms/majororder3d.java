@@ -1,5 +1,5 @@
 
-public class majororder3d {
+public class MajorOrder3D {
 
     public static void main(String [] args) {
         int [][][] m = {{{0, 1}, {2, 3}}, {{4, 5}, {6, 7}}};
