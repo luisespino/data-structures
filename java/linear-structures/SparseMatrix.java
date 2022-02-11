@@ -199,7 +199,6 @@ public class SparseMatrix {
     
                 }                
             } else { //empty row at end
-                System.out.print("!");
                 for (int j = 0; j < dim; j++) {
                     System.out.print("-- ");
                 }
@@ -211,17 +210,17 @@ public class SparseMatrix {
 
     public static void main(String [] args) {
         SparseMatrix sp = new SparseMatrix();
-        //sp.add("00", 0, 0);
+        sp.add("00", 0, 0);
         sp.add("02", 0, 2);
-        //sp.add("03", 0, 3);
-        //sp.add("11", 1, 1);
+        sp.add("03", 0, 3);
+        sp.add("11", 1, 1);
         //sp.add("11", 1, 3);
-        sp.add("20", 2, 0);
+        //sp.add("20", 2, 0);
         sp.add("22", 2, 2);
-        //sp.add("30", 3, 0);
-        sp.add("31", 3, 1);
+        sp.add("30", 3, 0);
+        //sp.add("31", 3, 1);
         sp.add("33", 3, 3);
-        //sp.add("YY", 1, 3);
+        sp.add("YY", 3, 3);
         sp.printRef(4);
     }    
 }
