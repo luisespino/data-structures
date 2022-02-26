@@ -65,9 +65,9 @@ public class BST {
 	public static void main(String[] args) {
 		BST bst = new BST();
 		bst.add(25);bst.add(10);
-        bst.add(35);bst.add(5);
-        bst.add(20);bst.add(30);
-        bst.add(40);
+        	bst.add(35);bst.add(5);
+        	bst.add(20);bst.add(30);
+        	bst.add(40);
 		bst.preorder(bst.root);
 		System.out.println();
 		bst.enorder(bst.root);
