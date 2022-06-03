@@ -96,8 +96,9 @@ class MundoMitologico {
     c = new Centauro("cafe")
 }
 
-m = new MundoMitologico();
-m.p.show();
-m.u.show();
-m.c.show();
+document.getElementById("log").innerHTML+="result:<br>"
+m = new MundoMitologico()
+m.p.show()
+m.u.show()
+m.c.show()
 
