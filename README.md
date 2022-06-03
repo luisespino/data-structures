@@ -4,6 +4,8 @@ Examples of Python, Go, C++, Java and Javascript.
 
 Javascript examples:
 
+[Class diagram implementation](https://luisespino.github.io/data-structures/javascript/class-diagram/mitologico/mitologico.html)
+
 [Linked List](https://luisespino.github.io/data-structures/javascript/lineal-structures/list.html)
 
 [Array List Mod](https://luisespino.github.io/data-structures/javascript/lineal-structures/array-list-mod.html)
