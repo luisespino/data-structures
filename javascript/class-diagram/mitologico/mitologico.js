@@ -25,7 +25,10 @@ class Caballo{
 // but double inheritance is possible
 
 // interface
-class Alas extends Caballo {
+class Alas extends Caballo {    
+    constructor() {
+        super()
+    }
     volar() {
         throw new Error("Method 'volar()' must be implemented.")
     }
@@ -33,6 +36,9 @@ class Alas extends Caballo {
 
 // interface
 class Cuerno extends Caballo {
+    constructor() {
+        super()
+    }
     cornear() {
         throw new Error("Method 'cornear()' must be implemented.")
     }
@@ -40,17 +46,21 @@ class Cuerno extends Caballo {
 
 // interface
 class Torso extends Caballo {
+    constructor() {
+        super()
+    }
     hablar() {
         throw new Error("Method 'hablar()' must be implemented.")
     }
 }
 
-class Pegaso extends Alas{
+class Pegaso extends Alas {
     constructor(color) {
+        super()
         this.color = color
     }
     show() {
-        document.getElementById("log").innerHTML+=color+"<br>"
+        document.getElementById("log").innerHTML+=this.color+"<br>"
     }
     parar() {
         // ...
@@ -71,12 +81,13 @@ class Unicornio extends Cuerno{
         // ...
     }
     show() {
-    	document.getElementById("log").innerHTML+=color+"<br>"
+    	document.getElementById("log").innerHTML+=this.color+"<br>"
     }
 }
 
 class Centauro extends Torso{
     constructor (color) {
+        super();
         this.color = color
     }
     parar() {
@@ -86,18 +97,20 @@ class Centauro extends Torso{
         // ...
     }
     show() {
-    	document.getElementById("log").innerHTML+=color+"<br>"
+    	document.getElementById("log").innerHTML+=this.color+"<br>"
     }
 }
 
 class MundoMitologico {
-    p = new Pegaso("negro")
-    u = new Unicornio()
-    c = new Centauro("cafe")
+    constructor() {
+        this.p = new Pegaso("negro")
+        this.u = new Unicornio()
+        this.c = new Centauro("cafe")    
+    }
 }
 
-document.getElementById("log").innerHTML+="result:<br>"
-m = new MundoMitologico()
+document.getElementById("log").innerHTML+="constructors result:<br>"
+var m = new MundoMitologico()
 m.p.show()
 m.u.show()
 m.c.show()
