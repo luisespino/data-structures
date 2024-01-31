@@ -1,5 +1,5 @@
-Para compilar el código de la lista simplemente enlazada ejecutar:
+### Para compilar el código ejecutar:
 
-1. gfortran -c listdef.f90
-2. gfortran -c list.f90
-3. gfortran listdef.o list.o -o list
+- gfortran -c listdef.f90
+- gfortran -c list.f90
+- gfortran listdef.o list.o -o list
