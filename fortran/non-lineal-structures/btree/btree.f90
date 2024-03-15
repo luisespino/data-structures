@@ -4,7 +4,7 @@
 program BTree
     	implicit none
 
-      ! Order 4
+      	! Order 4
     	integer, parameter :: MAXI = 3, MINI = 1 
 
     	type nodeptr
