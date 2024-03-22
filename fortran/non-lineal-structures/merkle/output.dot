@@ -1,0 +1,23 @@
+graph{
+     5 [label="4E3B4A3C"];
+     5 --     6;
+     5 --     9;
+     6 [label="313E493B"];
+     6 --     7;
+     6 --     8;
+     7 [label="39697C69"];
+     1 [label="data1" shape=rect];
+     7 --     1;
+     8 [label="3A697C69"];
+     2 [label="data2" shape=rect];
+     8 --     2;
+     9 [label="4B3F393F"];
+     9 --    10;
+     9 --    11;
+    10 [label="3B697C69"];
+     3 [label="data3" shape=rect];
+    10 --     3;
+    11 [label="717C7865"];
+     4 [label="empty" shape=rect];
+    11 --     4;
+}
