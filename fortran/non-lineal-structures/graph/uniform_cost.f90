@@ -19,7 +19,7 @@ function successors(node) result(suc)
         	suc = reshape([2, 3, 5, 6, node(2)+3, node(2)+5, &
         	node(2)+3, node(2)+4], [4, 2])
     	elseif (node(1) == 5) then
-        	suc = reshape([3, 3, 6, node(2)+2, node(2)+3, &
+        	suc = reshape([3, 4, 6, node(2)+2, node(2)+3, &
         	node(2)+1], [3, 2])
    	elseif (node(1) == 6) then
         	suc = reshape([4, 5, node(2)+4, node(2)+1], [2, 2])
