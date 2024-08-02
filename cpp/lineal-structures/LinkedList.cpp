@@ -33,7 +33,7 @@ public:
 int main()
 {
     LinkedList *list1 = new LinkedList();
-    list1->addStart(6);
+    list1->addStart(5);
     list1->addStart(10);
     list1->addStart(7);
     list1->show();
