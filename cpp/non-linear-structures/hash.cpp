@@ -7,37 +7,37 @@ using namespace std;
 class Hash
 {
     public:
-	int n, m;
-	int *h;
-	int min, max;
-	
-	Hash(int m, int min, int max)
+    int n, m;
+    int *h;
+    int min, max;
+    
+    Hash(int m, int min, int max)
     {
-		this->m = m;
-		this->min = min;
-		this->max = max;
-		init();
+        this->m = m;
+        this->min = min;
+        this->max = max;
+        init();
 	}
-	
-	int division(int k)
+    
+    int division(int k)
     { 
-		return (k % m); 
-	}
-
-	int linear(int k)
+        return (k % m); 
+    }
+    
+    int linear(int k)
     { 
-		return ((k+1) % m); 
-	}
-
-	void init()
+        return ((k+1) % m); 
+    }
+    
+    void init()
     {
-		n = 0;
-		h = new int[m];
-		for(int i=0; i<m; i++) 
-			h[i] = -1;		
+        n = 0;
+        h = new int[m];
+        for(int i=0; i<m; i++) 
+            h[i] = -1;		
 	}
-
-	void insert(int k)
+    
+    void insert(int k)
     {
 		int i = division(k);
 		while (h[i] != -1)
@@ -46,8 +46,8 @@ class Hash
 		n++;
 		rehashing();
 	}	
-	
-	void rehashing()
+    
+    void rehashing()
     {
 		if ((n*100/m)>=max)
         {
@@ -64,8 +64,8 @@ class Hash
 		}
 		else print();
 	}
-
-	void print()
+    
+    void print()
     {
 		cout << "[" ;
 		for(int i=0; i<m; i++)
