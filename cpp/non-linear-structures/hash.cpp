@@ -39,49 +39,48 @@ class Hash
     
     void insert(int k)
     {
-		int i = division(k);
-		while (h[i] != -1)
-			i = linear (i);
-		h[i] = k;
-		n++;
-		rehashing();
-	}	
+        int i = division(k);
+        while (h[i] != -1)
+            i = linear (i);
+        h[i] = k;
+        n++;
+        rehashing();
+    }
     
     void rehashing()
     {
-		if ((n*100/m)>=max)
+        if ((n*100/m)>=max)
         {
-			//array copy
-			int *temp = h;
-			print();
-			//rehashing
-			int mprev = m;		
-			m = n*100/min;
-			init();
-			for (int i=0; i<mprev; i++)
-				if (temp[i]!=-1)
-					insert(temp[i]);			
-		}
-		else print();
-	}
+            //array copy
+            int *temp = h;
+            print();
+            //rehashing
+            int mprev = m;
+            m = n*100/min;
+            init();
+            for (int i=0; i<mprev; i++)
+                if (temp[i]!=-1)
+                    insert(temp[i]);
+        }
+        else print();
+    }
     
     void print()
     {
-		cout << "[" ;
-		for(int i=0; i<m; i++)
-			cout << " " << h[i];
-		cout << " ] " << (n*100/m) << "%" << endl;
-	}
+        cout << "[" ;
+        for(int i=0; i<m; i++)
+            cout << " " << h[i];
+        cout << " ] " << (n*100/m) << "%" << endl;
+    }
 };
 
 int main() {
-	Hash *hash = new Hash(5, 20, 80); // m, min, max
-	hash->insert(5);
-	hash->insert(10);
-	hash->insert(15);
-	hash->insert(20);
+    Hash *hash = new Hash(5, 20, 80); // m, min, max
+    hash->insert(5);
+    hash->insert(10);
+    hash->insert(15);
+    hash->insert(20);
     hash->insert(25);
-	hash->insert(30);
+    hash->insert(30);
     return 0;
 }
-
