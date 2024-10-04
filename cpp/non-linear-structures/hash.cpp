@@ -17,7 +17,7 @@ class Hash
         this->min = min;
         this->max = max;
         init();
-	}
+    }
     
     int division(int k)
     { 
@@ -34,8 +34,8 @@ class Hash
         n = 0;
         h = new int[m];
         for(int i=0; i<m; i++) 
-            h[i] = -1;		
-	}
+            h[i] = -1;
+    }
     
     void insert(int k)
     {
