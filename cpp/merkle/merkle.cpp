@@ -87,9 +87,9 @@ public:
         for (int i = index  ; i < pow(2, exp); i++) {
             datablock[index++] = new DataNode(i*100);
         }
-        /*for (int i = 0; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             cout << datablock[i]->value << endl;
-        }*/
+        }
         //index = pow(2, exp);
         createTree(exp);
         genHash(tophash, index);
