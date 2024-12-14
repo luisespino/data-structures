@@ -18,12 +18,15 @@ function parse(str) result(res)
     res = tmp%out
 end function parse
 
+! s = e
 recursive function s(tmp) result(res)
     type(attr), intent(in) :: tmp
     type(attr) :: res
     res = e(tmp)
 end function s
 
+! e = t '+' e 
+!   / t
 recursive function e(tmp) result(res)
     type(attr), intent(in) :: tmp
     type(attr) :: t1, e1, res
@@ -50,6 +53,8 @@ recursive function e(tmp) result(res)
     res = t(tmp)
 end function e
 
+! t = f '*' t
+!   / f
 recursive function t(tmp) result(res)
     type(attr), intent(in) :: tmp
     type(attr) :: f1, t1, res
@@ -76,6 +81,7 @@ recursive function t(tmp) result(res)
     res = f(tmp)
 end function t
 
+! f = [0..9]
 recursive function f(tmp) result(res)
     type(attr), intent(in) :: tmp
     type(attr) :: f1, res
@@ -96,8 +102,29 @@ program main
     use parser
     implicit none
     character(len=:), allocatable :: in, out
-    in = "1*2+2*3"
-    out = parse(in)
-    print *, out
+
+
+    ! Ciclo para ingresar varias expresiones
+    do
+        allocate(character(len=100) :: in)
+        ! Solicitar al usuario que ingrese una expresión
+        print *, "Ingrese una expresión (o 'exit' para terminar):"
+        
+        read (*,*) in
+
+        ! Si el usuario ingresa 'exit', terminar el ciclo
+        if (in == 'exit') then
+            print *, "Saliendo del programa..."
+            exit
+        end if
+
+        ! Llamar a la función parse con la expresión ingresada
+        out = parse(in)
+
+        ! Imprimir el resultado
+        print *, "Resultado: ", out
+        deallocate(in, out)
+    end do
+    
 end program main
 
