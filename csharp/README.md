@@ -62,7 +62,7 @@ Check the installed version:
 dotnet --version
 ```
 
-![Alt text](https://github.com/luisespino/data-structures/csharp/blob/main/img/screenshot1.png?raw=true "version")
+![Alt text](https://github.com/luisespino/data-structures/blob/master/csharp/img/screenshot1.pngraw=true "version")
 
 Install the GTK library (for GUI applications):
 ```
@@ -122,7 +122,7 @@ dotnet build
 dotnet run
 ```
 
-![Alt text](https://github.com/luisespino/data-structures/csharp/blob/main/img/screenshot2.png?raw=true "version")
+![Alt text](https://github.com/luisespino/data-structures/blob/master/csharp/img/screenshot2.png?raw=true "version")
 
 You can create a self-contained bundle of the application (for .NET 9.0 and Linux x64):
 ```
