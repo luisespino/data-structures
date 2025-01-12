@@ -70,7 +70,7 @@ sudo pacman -S gtk3
 ```
 &nbsp;
 
-# Code "Hello, World!" graphically
+# Create a graphical 'Hello, World!' program
 
 Create a new project:
 ```
