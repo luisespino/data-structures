@@ -62,7 +62,7 @@ Check the installed version:
 dotnet --version
 ```
 
-![Alt text](https://github.com/luisespino/data-structures/blob/master/csharp/img/screenshot1.pngraw=true "version")
+![Alt text](https://github.com/luisespino/data-structures/blob/master/csharp/img/screenshot1.png?raw=true "version")
 
 Install the GTK library (for GUI applications):
 ```
