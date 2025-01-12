@@ -131,3 +131,7 @@ cd bin/Release/net9.0/linux-x64/publish
 chmod +x HelloWorld
 ./HelloWorld
 ```
+
+You can also use Visual Studio Code with the C# Dev Kit:
+
+![Alt text](https://github.com/luisespino/data-structures/blob/master/csharp/img/screenshot3.png?raw=true "version")
