@@ -57,6 +57,19 @@ Update the PATH environment variable:
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 ```
 
+When running export, the changes will only be reflected for the current session. If you want the environment variables to always be loaded, you can use the bashrc file:
+
+```
+nano ~/.bashrc
+```
+
+The two exports must be added to the end of the file, then saved and exited. If you want to apply the changes immediately:
+
+```
+source ~/.bashrc
+```
+
+
 Check the installed version:
 ```
 dotnet --version
