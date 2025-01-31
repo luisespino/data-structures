@@ -1,5 +1,5 @@
-; Breadth First Search Algoritm
-; Copyrigth (2015) Luis Espino
+; Breadth First Search Algorithm
+; Copyrigth (c) 2015 Luis Espino
 
 ; Problem: Points matrix
 ; Sucesors rule: every possible node around
