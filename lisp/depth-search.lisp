@@ -27,7 +27,8 @@
         (setq current-node (car l))
         (format t "Current node: ~a~%" current-node)
         (setq l (cdr l))
-        (if (= current-node end-node) (return-from depth-search (print "SOLUTION FOUND")))
+        (if (= current-node end-node) 
+            (return-from depth-search (print "SOLUTION FOUND")))
         (setq temp (successors current-node))
         (setq temp (reverse temp)) ; to avoid cycling
         (format t "Current node successors: ~a~%" temp)
