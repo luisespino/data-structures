@@ -23,15 +23,15 @@ class Graph
         for (int i = 0; i < n; i++)
             visited[i] = false;
 
-        int[] stack = new int[n];
+        int[] queue = new int[n];
         int front = 0, end = 0;
 
         visited[start] = true;
-        stack[end++] = start;
+        queue[end++] = start;
 
         while (front < end)
         {
-            int node = stack[front++];
+            int node = queue[front++];
             Console.Write(node + " ");
 
             for (int i = 0; i < n; i++)
@@ -39,7 +39,7 @@ class Graph
                 if (adj[node, i] == 1 && !visited[i])
                 {
                     visited[i] = true;
-                    stack[end++] = i;
+                    queue[end++] = i;
                 }
             }
         }
