@@ -13,3 +13,5 @@
 - Huffman Coding
 - Cryptography
 - Blockchain
+
+[JavaScript Examples](javascript)
