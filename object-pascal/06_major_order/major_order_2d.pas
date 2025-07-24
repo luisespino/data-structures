@@ -18,10 +18,12 @@ begin
                 colmajor[i + 4 * j] := m[i, j];
             end;
 
+    Write('Row-major: ');
     for i := 0 to 15 do
         Write(rowmajor[i], ' ');
     Writeln;
 
+    Write('Col-major: ');
     for i := 0 to 15 do
         Write(colmajor[i], ' ');
     Writeln;
