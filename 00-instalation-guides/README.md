@@ -1,1 +1,3 @@
-## Código de Estructuras de Datos en Python
+# Instalation Guides
+
+[Free Pascal on Console and Lazarus](pascal.md)
