@@ -17,8 +17,8 @@
 
 [JavaScript Examples](javascript)
 
-##  Programming Language Usage Ranking
+###  Programming Language Usage Ranking
 
 <p align="center">
-  <img src="lang.png" width="500" alt="Languages" />
+  <img src="lang.png" width="450" alt="Languages" />
 </p>
