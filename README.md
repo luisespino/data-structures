@@ -18,5 +18,5 @@
 [JavaScript Examples](javascript)
 
 <p align="center">
-  <img src="lang.png" width="300" alt="Languages" />
+  <img src="lang.png" width="500" alt="Languages" />
 </p>
