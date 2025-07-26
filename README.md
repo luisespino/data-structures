@@ -16,3 +16,7 @@
 - Blockchain
 
 [JavaScript Examples](javascript)
+
+<p align="center">
+  <img src="lang.png" width="300" alt="Languages" />
+</p>
