@@ -1,0 +1,80 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Estilo -->
+    <style>
+        .node { fill: #f0f0f0; stroke: #333; stroke-width: 2; }
+        .head { fill: #ffcccc; }
+        .data { fill: #ccffcc; }
+        .header { fill: #ccccff; }
+        .text { font-family: Arial; font-size: 12px; text-anchor: middle; }
+        .arrow { stroke: #333; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+        </marker>
+    </defs>
+
+    <!-- Nodos -->
+    <!-- Head (0,0) -->
+    <rect x="50" y="50" width="60" height="40" class="node head" rx="5"/>
+    <text x="80" y="75" class="text">00 (0,0)</text>
+
+    <!-- Headers de columna -->
+    <rect x="150" y="50" width="60" height="40" class="node header" rx="5"/>
+    <text x="180" y="75" class="text">XX (0,1)</text>
+  
+  <rect x="250" y="50" width="60" height="40" class="node header" rx="5"/>
+    <text x="280" y="75" class="text">02 (0,2)</text>
+    
+    <rect x="350" y="50" width="60" height="40" class="node header" rx="5"/>
+    <text x="380" y="75" class="text">03 (0,3)</text>
+
+    <!-- Headers de fila -->
+    <rect x="50" y="150" width="60" height="40" class="node header" rx="5"/>
+    <text x="80" y="175" class="text">XX (1,0)</text>
+    
+    <rect x="50" y="250" width="60" height="40" class="node header" rx="5"/>
+    <text x="80" y="275" class="text">XX (2,0)</text>
+    
+    <rect x="50" y="350" width="60" height="40" class="node header" rx="5"/>
+    <text x="80" y="375" class="text">30 (3,0)</text>
+
+    <!-- Nodos de datos -->
+    <rect x="150" y="150" width="60" height="40" class="node data" rx="5"/>
+    <text x="180" y="175" class="text">11 (1,1)</text>
+    
+    <rect x="250" y="250" width="60" height="40" class="node data" rx="5"/>
+    <text x="280" y="275" class="text">22 (2,2)</text>
+    
+    
+    <rect x="350" y="350" width="60" height="40" class="node data" rx="5"/>
+    <text x="380" y="375" class="text">33 (3,3)</text>
+
+    <!-- Conexiones horizontales (right/left) -->
+    <line x1="110" y1="70" x2="150" y2="70" class="arrow"/>
+    <line x1="210" y1="70" x2="250" y2="70" class="arrow"/>
+    <line x1="310" y1="70" x2="350" y2="70" class="arrow"/>
+    
+    <line x1="110" y1="170" x2="150" y2="170" class="arrow"/>
+    <line x1="110" y1="270" x2="250" y2="270" class="arrow"/>
+    <line x1="110" y1="370" x2="350" y2="370" class="arrow"/>
+
+    <!-- Conexiones verticales (up/down) -->
+    <line x1="80" y1="90" x2="80" y2="150" class="arrow"/>
+    <line x1="80" y1="190" x2="80" y2="250" class="arrow"/>
+    <line x1="80" y1="290" x2="80" y2="350" class="arrow"/>
+    
+    <line x1="180" y1="90" x2="180" y2="150" class="arrow"/>
+    <line x1="280" y1="90" x2="280" y2="250" class="arrow"/>
+    <line x1="380" y1="90" x2="380" y2="350" class="arrow"/>
+    
+    <!-- Leyenda -->
+    <rect x="450" y="50" width="60" height="20" class="node head" rx="3"/>
+    <text x="480" y="65" class="text">Head</text>
+    
+    <rect x="450" y="80" width="60" height="20" class="node header" rx="3"/>
+    <text x="480" y="95" class="text">Header</text>
+    
+    <rect x="450" y="110" width="60" height="20" class="node data" rx="3"/>
+    <text x="480" y="125" class="text">Data</text>
+</svg>
