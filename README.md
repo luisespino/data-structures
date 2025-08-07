@@ -19,9 +19,6 @@
 
 ###  Programming Language Usage Ranking
 
-<p align="center">
-  <img src="lang.png" width="450" alt="Languages" />
-</p>
-
-
-![Stats](https://kunusoft.com/lang.php?v=1)
+<div style="text-align: center;">
+  <img src="https://kunusoft.com/lang.php" alt="Stats">
+</div>
