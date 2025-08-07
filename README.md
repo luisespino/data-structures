@@ -23,6 +23,5 @@
   <img src="lang.png" width="450" alt="Languages" />
 </p>
 
-<div style="width:200px; height:400px;">
-  <iframe src="https://tusuario.github.io/language-bar/" width="200" height="400" style="border:none;" loading="lazy"></iframe>
-</div>
+
+<iframe src="https://tusuario.github.io/language-bar/" width="100%" height="200px"></iframe>
