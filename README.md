@@ -24,4 +24,4 @@
 </p>
 
 
-![Stats](https://luisespino.github.io/stats/index.svg)
+![Stats](https://kunusoft.com/lang.php)
