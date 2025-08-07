@@ -24,4 +24,4 @@
 </p>
 
 
-![Stats](https://kunusoft.com/lang.php)
+![Stats](https://kunusoft.com/lang.php?v=1)
