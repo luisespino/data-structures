@@ -20,5 +20,5 @@
 ###  Programming Language Usage Ranking
 
 <div style="text-align: center;">
-  <img src="https://kunusoft.com/lang.php" alt="Stats">
+  <img src="https://kunusoft.com/lang.php?v=2" alt="Stats">
 </div>
