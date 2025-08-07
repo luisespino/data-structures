@@ -24,4 +24,4 @@
 </p>
 
 
-<iframe src="https://luisespino.github.io/stats/" width="100%" height="200px"></iframe>
+![Stats](https://luisespino.github.io/stats/)
