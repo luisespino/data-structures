@@ -23,7 +23,8 @@ type
         procedure Inorder(tmp: TNode);
         procedure Postorder(tmp: TNode);        
         procedure Levelorder(tmp: TNode);
-        procedure GenerateDot(tmp: TNode);
+        procedure GenDot(); overload;
+        procedure GenDot(tmp: TNode); overload;
     end;
 
 { TNode }
@@ -120,40 +121,25 @@ begin
     end;
 end;
 
-procedure TBST.GenerateDot(tmp: TNode);
-var
-    queue: TList;
-    node: TNode;
+procedure TBST.GenDot();
 begin
-    if tmp = nil then Exit;
-    
     Writeln('graph BSTree {');
     Writeln('    node [shape=circle];');
-    
-    queue := TList.Create;
-    try
-        queue.Add(tmp);
-        while queue.Count > 0 do
-        begin
-            node := TNode(queue[0]);
-            queue.Delete(0);
-            
-            if node.left <> nil then
-            begin
-                Writeln('    "', node.value, '" -- "', node.left.value, '";');
-                queue.Add(node.left);
-            end;
-            if node.right <> nil then
-            begin
-                Writeln('    "', node.value, '" -- "', node.right.value, '";');
-                queue.Add(node.right);
-            end;
-        end;
-    finally
-        queue.Free;
-    end;
-    
+    GenDot(root);
     Writeln('}');
+end;
+
+procedure TBST.GenDot(tmp: TNode);
+begin
+    if tmp <> nil then
+    begin
+        if tmp.left <> nil then 
+            Writeln('    "', tmp.value, '" -- "', tmp.left.value, '";'); 
+        if tmp.left <> nil then 
+            Writeln('    "', tmp.value, '" -- "', tmp.right.value, '";'); 
+        GenDot(tmp.left);
+        GenDot(tmp.right);
+    end;
 end;
 
 
@@ -184,7 +170,7 @@ begin
         bst.Levelorder(bst.root); Writeln;
 
         Write('DOT: ');
-        bst.GenerateDot(bst.root); Writeln;
+        bst.GenDot(); Writeln;
 
     finally
         bst.Free;
