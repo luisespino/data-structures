@@ -71,9 +71,9 @@ begin
         if (HeightOf(tmp.Left) - HeightOf(tmp.Right)) = 2 then
         begin
             if AValue < tmp.Left.Value then
-                tmp := SRL(tmp)
+                tmp := SRR(tmp)
             else
-                tmp := DRL(tmp);
+                tmp := DRR(tmp);
         end;
     end
     else if AValue > tmp.Value then
@@ -82,9 +82,9 @@ begin
         if (HeightOf(tmp.Right) - HeightOf(tmp.Left)) = 2 then
         begin
             if AValue > tmp.Right.Value then
-                tmp := SRR(tmp)
+                tmp := SRL(tmp)
             else
-                tmp := DRR(tmp);
+                tmp := DRL(tmp);
         end;
     end;
 
@@ -111,7 +111,7 @@ begin
         Exit(B);
 end;
 
-function TAVLTree.SRL(Node: TNode): TNode;
+function TAVLTree.SRR(Node: TNode): TNode;
 var
     Temp: TNode;
 begin
@@ -125,7 +125,7 @@ begin
     Result := Temp;
 end;
 
-function TAVLTree.SRR(Node: TNode): TNode;
+function TAVLTree.SRL(Node: TNode): TNode;
 var
     Temp: TNode;
 begin
@@ -139,16 +139,16 @@ begin
     Result := Temp;
 end;
 
-function TAVLTree.DRL(Node: TNode): TNode;
-begin
-    Node.Left := SRR(Node.Left);
-    Result := SRL(Node);
-end;
-
 function TAVLTree.DRR(Node: TNode): TNode;
 begin
-    Node.Right := SRL(Node.Right);
+    Node.Left := SRL(Node.Left);
     Result := SRR(Node);
+end;
+
+function TAVLTree.DRL(Node: TNode): TNode;
+begin
+    Node.Right := SRR(Node.Right);
+    Result := SRL(Node);
 end;
 
 procedure TAVLTree.Preorder(Node: TNode);
