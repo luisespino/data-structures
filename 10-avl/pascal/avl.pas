@@ -32,6 +32,10 @@ type
         procedure Inorder(Node: TNode);
         procedure Postorder(Node: TNode);
 
+        procedure Levelorder(tmp: TNode);
+        procedure GenDot(); overload;
+        procedure GenDot(tmp: TNode); overload;
+
         function Magic(Node: TNode): Integer;
     end;
 
@@ -177,6 +181,54 @@ begin
     end;
 end;
 
+procedure TAVLTree.Levelorder(tmp: TNode);
+var
+    queue: TList;
+    node: TNode;
+begin
+    if tmp = nil then Exit;
+
+    queue := TList.Create;
+    try
+        queue.Add(tmp);
+
+        while queue.Count > 0 do
+        begin
+            node := TNode(queue[0]);
+            queue.Delete(0);
+            Write(node.value, ' ');
+
+            if node.left <> nil then
+                queue.Add(node.left);
+            if node.right <> nil then
+                queue.Add(node.right);
+        end;
+    finally
+        queue.Free;
+    end;
+end;
+
+procedure TAVLTree.GenDot();
+begin
+    Writeln('graph AVLTree {');
+    Writeln('    node [shape=circle];');
+    GenDot(root);
+    Writeln('}');
+end;
+
+procedure TAVLTree.GenDot(tmp: TNode);
+begin
+    if tmp <> nil then
+    begin
+        if tmp.left <> nil then 
+            Writeln('    "', tmp.value, '" -- "', tmp.left.value, '";'); 
+        if tmp.right <> nil then 
+            Writeln('    "', tmp.value, '" -- "', tmp.right.value, '";'); 
+        GenDot(tmp.left);
+        GenDot(tmp.right);
+    end;
+end;
+
 function TAVLTree.Magic(Node: TNode): Integer;
 begin
     if Node <> nil then
@@ -203,6 +255,12 @@ begin
 
         Write('Postorder: ');
         AVL.Postorder(AVL.Root); Writeln;
+
+        Write('Levelorder: ');
+        AVL.Levelorder(AVL.Root); Writeln;
+
+        Write('DOT: ');
+        AVL.GenDot(); Writeln;
 
         //Writeln('Altura: ', AVL.HeightOf(AVL.Root));
         //Writeln('Magic: ', AVL.Magic(AVL.Root));

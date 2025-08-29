@@ -135,7 +135,7 @@ begin
     begin
         if tmp.left <> nil then 
             Writeln('    "', tmp.value, '" -- "', tmp.left.value, '";'); 
-        if tmp.left <> nil then 
+        if tmp.right <> nil then 
             Writeln('    "', tmp.value, '" -- "', tmp.right.value, '";'); 
         GenDot(tmp.left);
         GenDot(tmp.right);
