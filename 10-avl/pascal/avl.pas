@@ -32,9 +32,9 @@ type
         procedure Inorder(Node: TNode);
         procedure Postorder(Node: TNode);
 
-        procedure Levelorder(tmp: TNode);
+        procedure Levelorder(Node: TNode);
         procedure GenDot(); overload;
-        procedure GenDot(tmp: TNode); overload;
+        procedure GenDot(Node: TNode); overload;
 
         function Magic(Node: TNode): Integer;
     end;
@@ -181,27 +181,27 @@ begin
     end;
 end;
 
-procedure TAVLTree.Levelorder(tmp: TNode);
+procedure TAVLTree.Levelorder(Node: TNode);
 var
     queue: TList;
-    node: TNode;
+    curr: TNode;
 begin
-    if tmp = nil then Exit;
+    if Node = nil then Exit;
 
     queue := TList.Create;
     try
-        queue.Add(tmp);
+        queue.Add(Node);
 
         while queue.Count > 0 do
         begin
-            node := TNode(queue[0]);
+            curr := TNode(queue[0]);
             queue.Delete(0);
-            Write(node.value, ' ');
+            Write(curr.Value, ' ');
 
-            if node.left <> nil then
-                queue.Add(node.left);
-            if node.right <> nil then
-                queue.Add(node.right);
+            if curr.Left <> nil then
+                queue.Add(curr.Left);
+            if curr.Right <> nil then
+                queue.Add(curr.Right);
         end;
     finally
         queue.Free;
@@ -216,16 +216,16 @@ begin
     Writeln('}');
 end;
 
-procedure TAVLTree.GenDot(tmp: TNode);
+procedure TAVLTree.GenDot(Node: TNode);
 begin
-    if tmp <> nil then
+    if Node <> nil then
     begin
-        if tmp.left <> nil then 
-            Writeln('    "', tmp.value, '" -- "', tmp.left.value, '";'); 
-        if tmp.right <> nil then 
-            Writeln('    "', tmp.value, '" -- "', tmp.right.value, '";'); 
-        GenDot(tmp.left);
-        GenDot(tmp.right);
+        if Node.Left <> nil then
+            Writeln('    "', Node.Value, '" -- "', Node.Left.Value, '";');
+        if Node.Right <> nil then
+            Writeln('    "', Node.Value, '" -- "', Node.Right.Value, '";');
+        GenDot(Node.Left);
+        GenDot(Node.Right);
     end;
 end;
 
