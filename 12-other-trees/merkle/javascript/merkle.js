@@ -99,7 +99,7 @@ class Merkle {
       this.dotgen(tmp.right)
     }
   }
-}
+}z
 
 var index = 0
 
