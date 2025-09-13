@@ -9,7 +9,6 @@ type
     TDataNode = class
     public
         Value: Integer;
-        Next: TDataNode; // No se usa pero se conserva para equivalencia
         constructor Create(AValue: Integer);
     end;
 
