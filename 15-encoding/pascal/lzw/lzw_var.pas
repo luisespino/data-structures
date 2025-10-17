@@ -143,7 +143,7 @@ type
 
     while BitPos + CodeSize <= Length(Compressed) * 8 do
     begin
-      CurrCode := ReadBits(Compressed, BitPos, CodeSize);
+      CurrCode := ReadBits(Compressed, BitPos,ReadBits(Compressed, Bit CodeSize);
 
       if CurrCode < DictSize then
         CurrStr := Dict[CurrCode]
